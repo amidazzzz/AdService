@@ -1,18 +1,29 @@
 package ru.amida.advertservice.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
+import java.math.BigDecimal;
+
 @Data
+@NoArgsConstructor
+@Entity
+@Table(name = "adverts")
 public class Advert {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String title;
+
     private String description;
-    private Customer customer;
+
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
