@@ -1,0 +1,29 @@
+<!-- addAdvert.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Создание объявления</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <h1>Создание объявления</h1>
+
+    <form th:action="@{/addAdvert}" method="post">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="price">Цена:</label>
+        <input type="number" id="price" name="price" required>
+
+        <button type="submit">Создать объявление</button>
+    </form>
+</div>
+
+</body>
+</html>
