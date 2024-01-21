@@ -60,8 +60,8 @@ Describe how to use your API. Provide examples and instructions.
 
 - Spring Boot
 - Spring Data JPA
+- Spring Security
 - Maven
-- ...
 
 ## Contact
 
